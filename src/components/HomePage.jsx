@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="home">
       <h1>Quizzical</h1>
-      <p>Welcome to Quizzical, Let's Do some QuickFire</p>
+      <p>Welcome to Quizzical! Test your general knowledge.</p>
       <button onClick={handleHideHome}>Start Quiz</button>
     </div>
   );
