@@ -17,7 +17,7 @@ export default function Questions({ data }) {
       {questions}
       {!isCorrect ? (
         <button className="check-btn" onClick={showResults}>
-          Check Answers
+          View Scores
         </button>
       ) : (
         <div className="results">
