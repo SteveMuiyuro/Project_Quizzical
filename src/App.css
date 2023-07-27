@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Smythe&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.home,
+.questions,
+.loading {
+  height: 50em;
+  width: 80em;
+  background-color: #94a3b8;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1e293b;
+}
+
+.home > p,
+.home > h1 {
+  margin: 0;
+}
+
+.home > button {
+  margin-top: 3em;
+  padding: 1em 3em;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+  border: none;
+  background-color: #334155;
+  color: #cbd5e1;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.8ms ease-out;
+  font-family: inherit;
+}
+
+.home > button:hover {
+  background-color: #475569;
+}
+
+.options > div {
+  padding: 0.5em;
+  margin: 0;
+}
+
+hr {
+  border-color: #475569;
+  min-width: 50em;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-btn {
+  margin-top: 3em;
+  padding: 1em 2em;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+  border: none;
+  background-color: #334155;
+  color: #cbd5e1;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.8ms ease-out;
+  font-family: inherit;
+}
+
+.check-btn:hover {
+  background-color: #475569;
+}
+
+.radio-input {
+  margin: 0;
+  visibility: hidden;
+}
+
+.radio-input:checked + span {
+  background-color: #1e293b;
+  color: #cbd5e1;
+}
+
+.custom-radio {
+  cursor: pointer;
+  display: flex;
+  padding: 0.5em 1.5em;
+  border: 1px solid #1e293b;
+  border-radius: 0.3em;
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+}
+.correctAnswer {
+  background-color: #4ade80;
+  color: #f1f5f9;
+  cursor: pointer;
+  display: flex;
+  padding: 0.5em 1.5em;
+  border: 1px solid #1e293b;
+  border-radius: 0.3em;
+  display: inline-block;
+  position: relative;
+}
+
+.results {
+  display: flex;
+  margin-top: 2.5em;
+  width: 25em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results > button {
+  padding: 0.5em 1.5em;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+  border: none;
+  background-color: #334155;
+  color: #cbd5e1;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.8ms ease-out;
+  font-family: inherit;
+}
+
+.results > button:hover {
+  background-color: #475569;
+}
+
+.feedback {
+  font-weight: bold;
+  font-weight: 1.2rem;
+}
