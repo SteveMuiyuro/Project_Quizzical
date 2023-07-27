@@ -12,4 +12,4 @@ The application of react hooks such as;
 
 The implimentation of conditional rendering and option chaining.
 
-View Project => [Project_Quizzical](https://project-quizzical.netlify.app/)
+View Project => [Project Quizzical](https://project-quizzical.netlify.app/)
