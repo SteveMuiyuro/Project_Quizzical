@@ -24,7 +24,7 @@ export default function Questions({ data }) {
           <p className="feedback">
             You got {count} out {data.length} questions
           </p>
-          <button onClick={playAgain}>Play Again</button>
+          <button onClick={playAgain}>Try Again</button>
         </div>
       )}
     </div>

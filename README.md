@@ -2,7 +2,9 @@
 
 This project is on the following concepts;
 
-The application of react hooks:
+Fetching data from the API and displaying on the front end
+
+The application of react hooks such as;
 
 - useContext
 - useRef
