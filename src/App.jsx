@@ -6,6 +6,7 @@ import Questions from "./components/Questions";
 import Loading from "./components/Loading";
 import { nanoid } from "nanoid";
 import { shuffle } from "lodash";
+import Confetti from "react-confetti";
 
 const HomeContext = createContext();
 
@@ -15,6 +16,7 @@ function App() {
   const [isCorrect, setCorrect] = useState(false);
   const [count, setCount] = useState(0);
   const [isNewQuiz, setIsNewQuiz] = useState(false);
+  const [confetti, setConfetti] = useState(false);
 
   function handleHideHome() {
     data.length > 0 && setHideHome((prev) => !prev);
@@ -23,11 +25,13 @@ function App() {
 
   function showResults() {
     setCorrect((prev) => !prev);
+    if (count === data.length) setConfetti((prev) => !prev);
   }
 
   function playAgain() {
     showResults();
     setIsNewQuiz(false);
+
     window.location.reload(false);
   }
   useEffect(() => {
@@ -69,6 +73,7 @@ function App() {
       {!hideHome && <HomePage />}
       {hideHome && isNewQuiz && <Questions data={data} />}
       {hideHome && !isNewQuiz && <Loading />}
+      {confetti && <Confetti />}
     </HomeContext.Provider>
   );
 }
