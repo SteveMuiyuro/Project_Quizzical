@@ -9,3 +9,5 @@ The application of react hooks:
 - useState
 
 The implimentation of conditional rendering and option chaining.
+
+View Project => [Project Quizzical]("https://project-quizzical.netlify.app/")
