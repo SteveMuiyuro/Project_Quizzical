@@ -10,8 +10,6 @@ export default function Questions({ data }) {
     <Question key={i} quiz={obj.question} selections={obj.choices} />
   ));
 
-  console.log(data);
-
   return (
     <div className="questions">
       {questions}

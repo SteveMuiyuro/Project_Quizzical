@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext, useEffect, memo } from "react";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import PlayAgain from "./components/PlayAgain";
@@ -17,6 +17,8 @@ function App() {
   const [count, setCount] = useState(0);
   const [isNewQuiz, setIsNewQuiz] = useState(false);
   const [confetti, setConfetti] = useState(false);
+  const [catergoryValue, setCatergoryValue] = useState();
+  const [difficulty, setDifficulty] = useState("");
 
   function handleHideHome() {
     data.length > 0 && setHideHome((prev) => !prev);
@@ -31,11 +33,13 @@ function App() {
   function playAgain() {
     showResults();
     setIsNewQuiz(false);
-
     window.location.reload(false);
   }
+
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=6")
+    fetch(
+      `https://opentdb.com/api.php?amount=6&category=${catergoryValue}&difficulty=${difficulty}`
+    )
       .then((res) => res.json())
       .then((data) =>
         setData(
@@ -52,7 +56,7 @@ function App() {
           }))
         )
       );
-  }, []);
+  }, [catergoryValue, difficulty]);
 
   return (
     <HomeContext.Provider
@@ -68,6 +72,8 @@ function App() {
         count,
         playAgain,
         isNewQuiz,
+        setCatergoryValue,
+        setDifficulty,
       }}
     >
       {!hideHome && <HomePage />}
@@ -79,4 +85,4 @@ function App() {
 }
 
 export { HomeContext };
-export default App;
+export default memo(App);

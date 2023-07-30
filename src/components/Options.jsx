@@ -27,6 +27,7 @@ export default function Options(props) {
         value={decode(props.choice)}
         onChange={handleChange}
         checked={option.isChecked}
+        disabled={isCorrect}
       />
       <span
         className={

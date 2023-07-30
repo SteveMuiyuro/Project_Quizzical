@@ -35,6 +35,10 @@ body {
   margin: 0;
 }
 
+.home > p {
+  margin-top: 0.9em;
+}
+
 .home > button {
   margin-top: 3em;
   padding: 1em 3em;
@@ -157,4 +161,16 @@ hr {
 .feedback {
   font-weight: bold;
   font-weight: 1.2rem;
+}
+
+select,
+option {
+  background-color: transparent;
+  font-family: inherit;
+  /* height: 3.5em; */
+  text-align: center;
+  padding: 0.5em 1em;
+  outline: none;
+  border-radius: 0.3em;
+  margin-top: 2.5em;
 }
