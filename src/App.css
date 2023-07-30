@@ -173,4 +173,12 @@ option {
   outline: none;
   border-radius: 0.3em;
   margin-top: 2.5em;
+  cursor: pointer;
+  transition: background-color, easein 0.3ms;
+  overflow: hidden;
+}
+
+select:hover {
+  background-color: #334155;
+  color: #f1f5f9;
 }
