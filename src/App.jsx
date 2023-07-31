@@ -18,12 +18,13 @@ function App() {
   const [isNewQuiz, setIsNewQuiz] = useState(false);
   const [catergoryValue, setCatergoryValue] = useState("");
   const [confetti, setConfetti] = useState(false);
+  const [level, setLevel] = useState("");
 
   function handleHideHome() {
     data.length > 0 && setHideHome((prev) => !prev);
     setIsNewQuiz(true);
   }
-  console.log();
+  console.log(level);
 
   function showResults() {
     setCorrect((prev) => !prev);
@@ -37,7 +38,9 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`https://opentdb.com/api.php?amount=6&category=${catergoryValue}`)
+    fetch(
+      `https://opentdb.com/api.php?amount=6&category=${catergoryValue}&difficulty=${level}`
+    )
       .then((res) => res.json())
       .then((data) =>
         setData(
@@ -54,7 +57,10 @@ function App() {
           }))
         )
       );
-  }, [catergoryValue]);
+    console.log(
+      `https://opentdb.com/api.php?amount=6&category=${catergoryValue}&difficulty=${level}`
+    );
+  }, [catergoryValue, level]);
 
   return (
     <HomeContext.Provider
@@ -71,6 +77,7 @@ function App() {
         playAgain,
         isNewQuiz,
         setCatergoryValue,
+        setLevel,
       }}
     >
       {!hideHome && <HomePage />}

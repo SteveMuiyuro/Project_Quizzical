@@ -1,9 +1,17 @@
 import React, { useContext } from "react";
+import { useState } from "react";
 import { HomeContext } from "../App/";
 import { database } from "./database";
 
 export default function HomePage() {
-  const { handleHideHome, setCatergoryValue } = useContext(HomeContext);
+  const { handleHideHome, setCatergoryValue, setLevel } =
+    useContext(HomeContext);
+  const difficulty = ["Easy", "Medium", "Hard"];
+
+  function handleChange2(e) {
+    const { value } = e.target;
+    setLevel(value.toLowerCase());
+  }
 
   function handleChange(e) {
     const { value } = e.target;
@@ -16,6 +24,12 @@ export default function HomePage() {
     </option>
   ));
 
+  const levels = difficulty.map((level) => (
+    <option key={level} value={level}>
+      {level}
+    </option>
+  ));
+
   return (
     <div className="home">
       <h1>Quizzical</h1>
@@ -23,6 +37,11 @@ export default function HomePage() {
       <select onChange={handleChange}>
         <option value="">Choose Catergory</option>
         {selections}
+      </select>
+
+      <select onChange={handleChange2}>
+        <option value="">Choose Level</option>
+        {levels}
       </select>
 
       <button onClick={handleHideHome}>Start Quiz</button>
