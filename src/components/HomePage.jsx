@@ -6,6 +6,7 @@ import { database } from "./database";
 export default function HomePage() {
   const { handleHideHome, setCatergoryValue, setLevel } =
     useContext(HomeContext);
+    
   const difficulty = ["Easy", "Medium", "Hard"];
 
   function handleChange2(e) {

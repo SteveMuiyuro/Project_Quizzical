@@ -38,8 +38,11 @@ function App() {
   }
 
   useEffect(() => {
+    const controller = new AbortController();
+
     fetch(
-      `https://opentdb.com/api.php?amount=6&category=${catergoryValue}&difficulty=${level}`
+      `https://opentdb.com/api.php?amount=6&category=${catergoryValue}&difficulty=${level}`,
+      { signal: controller.signal }
     )
       .then((res) => res.json())
       .then((data) =>
@@ -57,9 +60,8 @@ function App() {
           }))
         )
       );
-    console.log(
-      `https://opentdb.com/api.php?amount=6&category=${catergoryValue}&difficulty=${level}`
-    );
+
+    return () => controller.abort();
   }, [catergoryValue, level]);
 
   return (
